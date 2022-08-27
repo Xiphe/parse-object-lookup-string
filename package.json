@@ -1,6 +1,6 @@
 {
   "name": "parse-object-lookup-string",
-  "version": "0.0.0-development",
+  "version": "0.1.0",
   "description": "prefer using a Proxy",
   "main": "dist/parseObjectLookupString.cjs",
   "module": "dist/parseObjectLookupString.mjs",
