@@ -1,0 +1,51 @@
+{
+  "name": "parse-object-lookup-string",
+  "version": "0.0.0-development",
+  "description": "prefer using a Proxy",
+  "main": "dist/parseObjectLookupString.cjs",
+  "module": "dist/parseObjectLookupString.mjs",
+  "types": "dist/parseObjectLookupString.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/parseObjectLookupString.js",
+      "require": "./dist/parseObjectLookupString.cjs",
+      "types": "./dist/parseObjectLookupString.d.ts"
+    }
+  },
+  "scripts": {
+    "prepare": "npm run test && npm run build",
+    "test": "jest",
+    "prebuild": "rm -rf dist && tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "esbuild src/parseObjectLookupString.ts --outfile=dist/parseObjectLookupString.mjs --format=esm --target=es2020",
+    "build:cjs": "esbuild src/parseObjectLookupString.ts --outfile=dist/parseObjectLookupString.cjs --format=cjs --target=es2016"
+  },
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Xiphe/parse-object-lookup-string.git"
+  },
+  "keywords": [
+    "object-lookup",
+    "object-path",
+    "optional-path"
+  ],
+  "author": "Hannes Diercks <node@xiphe.net> (https://xiphe.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xiphe/parse-object-lookup-string/issues"
+  },
+  "homepage": "https://github.com/Xiphe/parse-object-lookup-string#readme",
+  "dependencies": {
+    "code-frame-error": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "28.1.8",
+    "esbuild": "0.15.5",
+    "jest": "28.1.3",
+    "ts-jest": "28.0.8",
+    "typescript": "4.8.2"
+  }
+}
